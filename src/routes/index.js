@@ -5,6 +5,7 @@ import middleware from '../middleware';
 import post from '../controller/post';
 import user from '../controller/user';
 import comment from '../controller/comment';
+import account from '../controller/account';
 
 let router = express();
 
@@ -23,6 +24,7 @@ initializeDb(db => {
   router.use('/users', user({ config, db }));
   router.use('/posts', post({ config, db }));
   router.use('/comments', comment({ config, db }));
+  router.use('/account', account({ config, db }));
 });
 
 export default router;
